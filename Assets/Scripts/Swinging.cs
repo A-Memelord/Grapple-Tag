@@ -1,10 +1,8 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Swinging : MonoBehaviour
 {
-    [Header("Input")]
-    public KeyCode swingKey = KeyCode.Mouse0;
-
     [Header("References")]
     public LineRenderer lr;
     public Transform gunTip, cam, player;
@@ -34,21 +32,6 @@ public class Swinging : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(swingKey))
-        {
-            StartSwing();
-        }
-        
-        if (Input.GetKeyUp(swingKey))
-        {
-            StopSwing();
-        }
-
-        if (joint != null)
-        {
-            AirMovement();
-        }
-
         CheckForSwingPoints();
     }
 
@@ -101,6 +84,14 @@ public class Swinging : MonoBehaviour
         }
 
         predictionHit = raycastHit.point == Vector3.zero ? sphereCastHit : raycastHit;
+    }
+
+    public void Swing(InputAction.CallbackContext ctx)
+    {
+        if (ctx.started)
+            StartSwing();
+        else if (ctx.canceled)
+            StopSwing();
     }
 
     private void StartSwing()
@@ -158,21 +149,25 @@ public class Swinging : MonoBehaviour
         lr.enabled = false;
     }
 
-    private void AirMovement()
+    public void AirMovement(InputAction.CallbackContext ctx)
     {
-        if (Input.GetKey(KeyCode.D))
+        if (joint != null)
         {
-            rb.AddForce(orientation.right * horizontalThrustForce * Time.deltaTime);
-        }
+            if (ctx.ReadValue<Vector2>().x > 0)
+            {
+                rb.AddForce(orientation.right * horizontalThrustForce * Time.deltaTime);
+            }
 
-        if (Input.GetKey(KeyCode.A))
-        {
-            rb.AddForce(-orientation.right * horizontalThrustForce * Time.deltaTime);
-        }
+            if (ctx.ReadValue<Vector2>().x < 0)
+            {
+                rb.AddForce(-orientation.right * horizontalThrustForce * Time.deltaTime);
+            }
 
-        if (Input.GetKey(KeyCode.W))
-        {
-            rb.AddForce(orientation.right * horizontalThrustForce * Time.deltaTime);
+            if (ctx.ReadValue<Vector2>().y > 0)
+            {
+                rb.AddForce(orientation.right * horizontalThrustForce * Time.deltaTime);
+            }
         }
+        
     }
 }

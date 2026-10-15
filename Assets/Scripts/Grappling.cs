@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Grappling : MonoBehaviour
 {
@@ -20,9 +21,6 @@ public class Grappling : MonoBehaviour
     public float grapplingCd;
     private float grapplingCdTimer;
 
-    [Header("Input")]
-    public KeyCode grappleKey = KeyCode.Mouse1;
-
     private bool grappling;
 
     public Animation anim;
@@ -34,13 +32,35 @@ public class Grappling : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(grappleKey))
+        if (grappling)
         {
-            StartGrapple();
-            anim.Play();
+
+            RaycastHit hit;
+
+            if (Physics.Raycast(cam.position, cam.forward, out hit, maxGrappleDistance, whatIsGrappleable))
+            {
+                grapplePoint = hit.point;
+                Invoke(nameof(ExecuteGrapple), grappleDelayTime);
+            }
+
+            else
+            {
+                grapplePoint = cam.position + cam.forward * maxGrappleDistance;
+                Invoke(nameof(StopGrapple), grappleDelayTime);
+            }
+
+            lr.enabled = true;
+
+            Debug.Log("2");
+            lr.positionCount = 2;
+
+            lr.SetPosition(0, gunTip.position);
+            lr.SetPosition(1, grapplePoint);
+
+            //anim.Play();
         }
 
-        if(grapplingCdTimer > 0)
+        if (grapplingCdTimer > 0)
         {
             grapplingCdTimer -= Time.deltaTime;
         }
@@ -54,35 +74,15 @@ public class Grappling : MonoBehaviour
         }
     }
 
-    private void StartGrapple()
+    public void StartGrapple(InputAction.CallbackContext ctx)
     {
-
-
-        if (grapplingCdTimer > 0) return;
-
-        grappling = true;
-
-        RaycastHit hit;
-        
-        if (Physics.Raycast(cam.position, cam.forward, out hit, maxGrappleDistance, whatIsGrappleable))
+        if (ctx.performed)
         {
-            grapplePoint = hit.point;
-            Invoke(nameof(ExecuteGrapple), grappleDelayTime);
+            if (grapplingCdTimer > 0)
+                return;
+
+            grappling = true;
         }
-
-        else
-        {
-            grapplePoint = cam.position + cam.forward * maxGrappleDistance;
-            Invoke(nameof(StopGrapple), grappleDelayTime);
-        }
-
-        lr.enabled = true;
-
-        Debug.Log("2");
-        lr.positionCount = 2;
-
-        lr.SetPosition(0, gunTip.position);
-        lr.SetPosition(1, grapplePoint);
     }
 
     private void ExecuteGrapple()

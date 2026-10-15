@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Sliding : MonoBehaviour
 {
@@ -16,35 +17,12 @@ public class Sliding : MonoBehaviour
     public float slideYScale;
     private float startYScale;
 
-    [Header("Input")]
-    public KeyCode slideKey = KeyCode.LeftControl;
-    private float horizontalInput;
-    private float verticalInput;
-
-
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         pm = GetComponent<PlayerMovement>();
 
         startYScale = playerObj.localScale.y;
-    }
-
-
-    void Update()
-    {
-        horizontalInput = Input.GetAxisRaw("Horizontal");
-        verticalInput = Input.GetAxisRaw("Vertical");
-
-        if (Input.GetKeyDown(slideKey) && (horizontalInput != 0 || verticalInput != 0))
-        {
-            StartSlide();
-        }
-
-        if (Input.GetKeyUp(slideKey) && pm.sliding)
-        {
-            StopSliding();
-        }
     }
 
     private void FixedUpdate()
@@ -55,21 +33,42 @@ public class Sliding : MonoBehaviour
         }
     }
 
+    public void Slide(InputAction.CallbackContext ctx)
+    {
+        if (ctx.started)
+            StartSlide();
+        else if (ctx.canceled)
+            StopSliding();
+    }
+
     private void StartSlide()
     {
-        pm.sliding = true;
+        if ((GetComponent<PlayerMovement>().horizontalInput != 0 || GetComponent<PlayerMovement>().verticalInput != 0))
+        {
+            pm.sliding = true;
 
-        playerObj.localScale = new Vector3(playerObj.localScale.x, slideYScale, playerObj.localScale.z);
-        rb.AddForce(Vector3.down * 5f, ForceMode.Impulse);
+            playerObj.localScale = new Vector3(playerObj.localScale.x, slideYScale, playerObj.localScale.z);
+            rb.AddForce(Vector3.down * 5f, ForceMode.Impulse);
 
-        slideTimer = maxSlideTime;
+            slideTimer = maxSlideTime;
+        }
+    }
+
+    private void StopSliding()
+    {
+        if (pm.sliding)
+        {
+            pm.sliding = false;
+
+            playerObj.localScale = new Vector3(playerObj.localScale.x, startYScale, playerObj.localScale.z);
+        }
     }
 
     public void SlidingMovemnet()
     {
         if(!pm.OnSlope() || rb.linearVelocity.y > -0.1f)
         {
-            Vector3 inputDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
+            Vector3 inputDirection = orientation.forward * GetComponent<PlayerMovement>().verticalInput + orientation.right * GetComponent<PlayerMovement>().horizontalInput;
 
             rb.AddForce(inputDirection.normalized * slideForce, ForceMode.Force);
             slideTimer -= Time.deltaTime;
@@ -77,7 +76,7 @@ public class Sliding : MonoBehaviour
 
         else
         {
-            Vector3 inputDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
+            Vector3 inputDirection = orientation.forward * GetComponent<PlayerMovement>().verticalInput + orientation.right * GetComponent<PlayerMovement>().horizontalInput;
             rb.AddForce(pm.GetSlopeMoveDirection(inputDirection) * slideForce, ForceMode.Force);
         }
 
@@ -85,12 +84,5 @@ public class Sliding : MonoBehaviour
         {
             StopSliding();
         }
-    }
-
-    private void StopSliding()
-    {
-        pm.sliding = false;
-
-        playerObj.localScale = new Vector3(playerObj.localScale.x, startYScale, playerObj.localScale.z);
     }
 }

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerCam : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class PlayerCam : MonoBehaviour
     float xRotation;
     float yRotation;
 
+    private float xTurn, yTurn;
 
     void Start()
     {
@@ -20,16 +22,19 @@ public class PlayerCam : MonoBehaviour
 
     void Update()
     {
-        float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensX;
-        float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * sensY;
+        yRotation += xTurn;
 
-        yRotation += mouseX;
-
-        xRotation -= mouseY;
+        xRotation -= yTurn;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
         transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
         orientation.rotation = Quaternion.Euler(0, yRotation, 0);
+    }
+
+    public void Turn(InputAction.CallbackContext ctx)
+    {
+        xTurn = ctx.ReadValue<Vector2>().x * Time.deltaTime * sensX;
+        yTurn = ctx.ReadValue<Vector2>().y * Time.deltaTime * sensY;
     }
 
     public void DoFov(float endValue)
