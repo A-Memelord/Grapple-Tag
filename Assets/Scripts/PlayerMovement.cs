@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -25,8 +26,8 @@ public class PlayerMovement : MonoBehaviour
 
     public Transform orientation;
 
-    float horizontalInput;
-    float verticalInput;
+    public float horizontalInput;
+    public float verticalInput;
 
     public float groundDrag;
 
@@ -35,10 +36,6 @@ public class PlayerMovement : MonoBehaviour
     public float jumpCooldown;
     public float airMultiplier;
     public bool readyToJump;
-
-    [Header("Keybinds")]
-    public KeyCode jumpKey = KeyCode.Space;
-    public KeyCode sprintKey = KeyCode.LeftShift;
 
     [Header("Ground Check")]
     public float playerHeight;
@@ -75,6 +72,7 @@ public class PlayerMovement : MonoBehaviour
     public bool activeGrapple;
     public bool swinging;
     public bool wallrunning;
+    public bool sprinting;
 
     void Start()
     {
@@ -94,7 +92,6 @@ public class PlayerMovement : MonoBehaviour
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
 
         whatIsTheVelocity = rb.linearVelocity.magnitude;
-        MyInput();
         SpeedControl();
         StateHandler();
 
@@ -124,30 +121,6 @@ public class PlayerMovement : MonoBehaviour
             moveSpeed = 8f;
         }
     }
-
-    private void MyInput()
-    {
-        horizontalInput = Input.GetAxisRaw("Horizontal");
-        verticalInput = Input.GetAxisRaw("Vertical");
-
-        if(Input.GetKey(jumpKey) && readyToJump && grounded)
-        {
-            readyToJump = false;
-
-            Jump();
-
-            Invoke(nameof(ResetJump), jumpCooldown);
-        }
-
-        if (Input.GetKeyDown(sprintKey) && state == MovementState.air)
-        {
-            rb.AddForce(Vector3.down * 120, ForceMode.Impulse);
-            moveSpeed = 15f;
-            isGroundPounding = true;
-        }
-    }
-
-    
 
     //lerp
     private void StateHandler()
@@ -185,7 +158,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        else if(grounded && Input.GetKey(sprintKey))
+        else if(grounded && sprinting)
         {
             state = MovementState.sprinting;
             desiredMoveSpeed = 12f;
@@ -304,11 +277,42 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    private void Jump()
+    public void Move(InputAction.CallbackContext ctx)
     {
-        exitingSlope = true;
-        rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z);
-        rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
+        horizontalInput = ctx.ReadValue<Vector2>().x;
+        verticalInput = ctx.ReadValue<Vector2>().y;
+    }
+
+    public void Jump(InputAction.CallbackContext ctx)
+    {
+        if (ctx.performed && readyToJump && grounded)
+        {
+            exitingSlope = true;
+            rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z);
+            rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
+
+            readyToJump = false;
+
+            Invoke(nameof(ResetJump), jumpCooldown);
+        }
+    }
+
+    public void GroundPound(InputAction.CallbackContext ctx)
+    {
+        if (ctx.performed && state == MovementState.air)
+        {
+            rb.AddForce(Vector3.down * 120, ForceMode.Impulse);
+            moveSpeed = 15f;
+            isGroundPounding = true;
+        }
+    }
+
+    public void Sprint(InputAction.CallbackContext ctx)
+    {
+        if (ctx.started)
+            sprinting = true;
+        else if (ctx.canceled)
+            sprinting = false;
     }
 
     private void ResetJump()

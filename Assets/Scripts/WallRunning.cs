@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class WallRunning : MonoBehaviour
 {
@@ -13,13 +14,8 @@ public class WallRunning : MonoBehaviour
     private float wallRunTimer;
 
     [Header("Input")]
-    public KeyCode jumpKey = KeyCode.Space;
-    public KeyCode upwardsRunKey = KeyCode.LeftShift;
-    public KeyCode downwardsRunKey = KeyCode.LeftControl;
     private bool upwardsRunning;
     private bool downwardsRunning;
-    private float horizontalInput;
-    private float verticalInput;
 
     [Header("Detection")]
     public float wallCheckDistance;
@@ -76,14 +72,11 @@ public class WallRunning : MonoBehaviour
     private void StateMachine()
     {
         // Getting Inputs
-        horizontalInput = Input.GetAxisRaw("Horizontal");
-        verticalInput = Input.GetAxisRaw("Vertical");
-
-        upwardsRunning = Input.GetKey(upwardsRunKey);
-        downwardsRunning = Input.GetKey(downwardsRunKey);
+        upwardsRunning = GetComponent<PlayerMovement>().verticalInput > 0;
+        downwardsRunning = GetComponent<PlayerMovement>().verticalInput < 0;
 
         // State 1 - Wallrunning
-        if ((wallLeft || wallRight) && verticalInput > 0 && AboveGround() && !exitingWall)
+        if ((wallLeft || wallRight) && GetComponent<PlayerMovement>().verticalInput > 0 && AboveGround() && !exitingWall)
         {
             if (!pm.wallrunning)
                 StartWallRun();
@@ -124,11 +117,6 @@ public class WallRunning : MonoBehaviour
             if (pm.wallrunning)
                 StopWallRun();
         }
-
-        if (Input.GetKeyDown(jumpKey) && !pm.grounded && pm.wallrunning)
-        {
-            WallJump();
-        }
     }
 
     private void StartWallRun()
@@ -163,7 +151,7 @@ public class WallRunning : MonoBehaviour
             rb.linearVelocity = new Vector3(rb.linearVelocity.x, -wallClimbSpeed, rb.linearVelocity.z);
 
         // push to wall force
-        if (!(wallLeft && horizontalInput > 0) && !(wallRight && horizontalInput < 0))
+        if (!(wallLeft && GetComponent<PlayerMovement>().horizontalInput > 0) && !(wallRight && GetComponent<PlayerMovement>().horizontalInput < 0))
             rb.AddForce(-wallNormal * 100, ForceMode.Force);
 
         if (useGravity)
@@ -179,18 +167,22 @@ public class WallRunning : MonoBehaviour
         pm.wallrunning = false;
     }
 
-    private void WallJump()
+    public void WallJump(InputAction.CallbackContext ctx)
     {
-        Debug.Log("walljump");
-        exitingWall = true;
+        if (ctx.performed && !pm.grounded && pm.wallrunning)
+        {
+            Debug.Log("walljump");
 
-        exitWallTimer = exitWallTime;
+            exitingWall = true;
 
-        Vector3 wallNormal = wallRight ? rightWallhit.normal : leftWallhit.normal;
+            exitWallTimer = exitWallTime;
 
-        Vector3 forceToApply = transform.up * wallJumpUpForce + wallNormal * wallJumpSideForce;
+            Vector3 wallNormal = wallRight ? rightWallhit.normal : leftWallhit.normal;
 
-        rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z);
-        rb.AddForce(forceToApply, ForceMode.Impulse);
+            Vector3 forceToApply = transform.up * wallJumpUpForce + wallNormal * wallJumpSideForce;
+
+            rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z);
+            rb.AddForce(forceToApply, ForceMode.Impulse);
+        }
     }
 }
