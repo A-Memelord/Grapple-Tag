@@ -59,7 +59,7 @@ public class GunGun : MonoBehaviour
                 hit.collider.GetComponent<GettingShotManager>().BroadcastMessage("Hit");
             }
         }
-        Rigidbody b = Instantiate(bullet, new Vector3 (gunTip.position.x, gunTip.position.y, gunTip.position.z), new Quaternion (gun.rotation.x +90, gun.rotation.y+90, gun.rotation.z+90, gun.rotation.w));
+        Rigidbody b = Instantiate(bullet, new Vector3 (gunTip.position.x, gunTip.position.y, gunTip.position.z), new Quaternion (gun.rotation.x, gun.rotation.y+90, gun.rotation.z, gun.rotation.w));
         b.AddForce(gun.transform.forward * 10000);
         reloadCdTimer = reloadCd;
 
