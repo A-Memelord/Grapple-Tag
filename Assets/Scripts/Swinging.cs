@@ -45,7 +45,8 @@ public class Swinging : MonoBehaviour
 
     private void CheckForSwingPoints()
     {
-        if (joint != null) return;
+        if (joint)
+            return;
 
         RaycastHit sphereCastHit;
         Physics.SphereCast(cam.position, predictionSphereCastRadius, cam.forward,
@@ -102,9 +103,9 @@ public class Swinging : MonoBehaviour
             return;
         }
 
-        if (GetComponent<Grappling>() != null)
+        if (TryGetComponent(out Grappling grappling))
         {
-            GetComponent<Grappling>().StopGrapple();
+            grappling.StopGrapple();
         }
 
         pm.ResetRestrictions();
@@ -146,26 +147,28 @@ public class Swinging : MonoBehaviour
         Debug.Log("3");
         lr.positionCount = 0;
         Destroy(joint);
+        joint = null;
+
         lr.enabled = false;
     }
 
     public void AirMovement(InputAction.CallbackContext ctx)
     {
-        if (joint != null)
+        if (joint)
         {
             if (ctx.ReadValue<Vector2>().x > 0)
             {
-                rb.AddForce(orientation.right * horizontalThrustForce * Time.deltaTime);
+                rb.AddForce(horizontalThrustForce * Time.deltaTime * orientation.right);
             }
 
             if (ctx.ReadValue<Vector2>().x < 0)
             {
-                rb.AddForce(-orientation.right * horizontalThrustForce * Time.deltaTime);
+                rb.AddForce(horizontalThrustForce * Time.deltaTime * -orientation.right);
             }
 
             if (ctx.ReadValue<Vector2>().y > 0)
             {
-                rb.AddForce(orientation.right * horizontalThrustForce * Time.deltaTime);
+                rb.AddForce(horizontalThrustForce * Time.deltaTime * orientation.right);
             }
         }
         

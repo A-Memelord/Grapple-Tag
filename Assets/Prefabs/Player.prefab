@@ -237,7 +237,7 @@ GameObject:
   - component: {fileID: 5562752688326622155}
   m_Layer: 0
   m_Name: PlayerCam
-  m_TagString: MainCamera
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -739,7 +739,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8197803233955085293}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 172a86c8f5c0f084a81b780f520c01e5, type: 3}
   m_Name: 
@@ -756,7 +756,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8197803233955085293}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 80e78e6eb0669c749981258d9d12c970, type: 3}
   m_Name: 
@@ -779,7 +779,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8197803233955085293}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f58420ccca02dcf4187de13242085a1e, type: 3}
   m_Name: 
@@ -805,7 +805,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8197803233955085293}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2c3c0ed9c4770704ca5993fe05c5b4a6, type: 3}
   m_Name: 
@@ -834,7 +834,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8197803233955085293}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 362fc8e7aadb41040b1a88271ba2f52a, type: 3}
   m_Name: 
@@ -1166,6 +1166,10 @@ PrefabInstance:
     - target: {fileID: 3411767496357490358, guid: c1a67cf669d16884a8cbabc8d8d8d583, type: 3}
       propertyPath: m_Name
       value: Prediction Point
+      objectReference: {fileID: 0}
+    - target: {fileID: 5113170849205301390, guid: c1a67cf669d16884a8cbabc8d8d8d583, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6233028169893097093, guid: c1a67cf669d16884a8cbabc8d8d8d583, type: 3}
       propertyPath: m_LocalPosition.x
