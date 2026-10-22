@@ -89,6 +89,8 @@ public class Swinging : MonoBehaviour
 
     public void Swing(InputAction.CallbackContext ctx)
     {
+        Debug.Log(ctx.phase);
+
         if (ctx.started)
             StartSwing();
         else if (ctx.canceled)
@@ -141,13 +143,13 @@ public class Swinging : MonoBehaviour
 
     void StopSwing()
     {
-        Debug.Log("pleb");
+        //Debug.Log("pleb");
         pm.swinging = false;
 
-        Debug.Log("3");
-        lr.positionCount = 0;
+        //Debug.Log("3");
         Destroy(joint);
         joint = null;
+        lr.positionCount = 0;
 
         lr.enabled = false;
     }
