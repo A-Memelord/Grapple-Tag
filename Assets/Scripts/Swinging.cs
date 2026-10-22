@@ -1,10 +1,8 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Swinging : MonoBehaviour
 {
-    [Header("Input")]
-    public KeyCode swingKey = KeyCode.Mouse0;
-
     [Header("References")]
     public LineRenderer lr;
     public Transform gunTip, cam, player;
@@ -34,21 +32,6 @@ public class Swinging : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(swingKey))
-        {
-            StartSwing();
-        }
-        
-        if (Input.GetKeyUp(swingKey))
-        {
-            StopSwing();
-        }
-
-        if (joint != null)
-        {
-            AirMovement();
-        }
-
         CheckForSwingPoints();
     }
 
@@ -62,7 +45,8 @@ public class Swinging : MonoBehaviour
 
     private void CheckForSwingPoints()
     {
-        if (joint != null) return;
+        if (joint)
+            return;
 
         RaycastHit sphereCastHit;
         Physics.SphereCast(cam.position, predictionSphereCastRadius, cam.forward,
@@ -103,6 +87,16 @@ public class Swinging : MonoBehaviour
         predictionHit = raycastHit.point == Vector3.zero ? sphereCastHit : raycastHit;
     }
 
+    public void Swing(InputAction.CallbackContext ctx)
+    {
+        Debug.Log(ctx.phase);
+
+        if (ctx.started)
+            StartSwing();
+        else if (ctx.canceled)
+            StopSwing();
+    }
+
     private void StartSwing()
     {
 
@@ -111,9 +105,9 @@ public class Swinging : MonoBehaviour
             return;
         }
 
-        if (GetComponent<Grappling>() != null)
+        if (TryGetComponent(out Grappling grappling))
         {
-            GetComponent<Grappling>().StopGrapple();
+            grappling.StopGrapple();
         }
 
         pm.ResetRestrictions();
@@ -149,30 +143,36 @@ public class Swinging : MonoBehaviour
 
     void StopSwing()
     {
-        Debug.Log("pleb");
+        //Debug.Log("pleb");
         pm.swinging = false;
 
-        Debug.Log("3");
-        lr.positionCount = 0;
+        //Debug.Log("3");
         Destroy(joint);
+        joint = null;
+        lr.positionCount = 0;
+
         lr.enabled = false;
     }
 
-    private void AirMovement()
+    public void AirMovement(InputAction.CallbackContext ctx)
     {
-        if (Input.GetKey(KeyCode.D))
+        if (joint)
         {
-            rb.AddForce(orientation.right * horizontalThrustForce * Time.deltaTime);
-        }
+            if (ctx.ReadValue<Vector2>().x > 0)
+            {
+                rb.AddForce(horizontalThrustForce * Time.deltaTime * orientation.right);
+            }
 
-        if (Input.GetKey(KeyCode.A))
-        {
-            rb.AddForce(-orientation.right * horizontalThrustForce * Time.deltaTime);
-        }
+            if (ctx.ReadValue<Vector2>().x < 0)
+            {
+                rb.AddForce(horizontalThrustForce * Time.deltaTime * -orientation.right);
+            }
 
-        if (Input.GetKey(KeyCode.W))
-        {
-            rb.AddForce(orientation.right * horizontalThrustForce * Time.deltaTime);
+            if (ctx.ReadValue<Vector2>().y > 0)
+            {
+                rb.AddForce(horizontalThrustForce * Time.deltaTime * orientation.right);
+            }
         }
+        
     }
 }
