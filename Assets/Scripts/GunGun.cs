@@ -1,5 +1,6 @@
 using Unity.Entities;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class GunGun : MonoBehaviour
 {
@@ -18,7 +19,7 @@ public class GunGun : MonoBehaviour
     [Header("Cooldown")]
     public float reloadCd;
     private float reloadCdTimer;
-    public Rigidbody bullet;
+    public LineRenderer lr;
 
     [Header("Input")]
     public KeyCode shootKey = KeyCode.Mouse1;
@@ -30,24 +31,18 @@ public class GunGun : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(shootKey))
-        {
-            Fire();
-            
-        }
 
         if (reloadCdTimer > 0)
         {
             reloadCdTimer -= Time.deltaTime;
         }
+        if (reloadCdTimer < reloadCd/1.5)
+        {
+            lr.enabled = false;
+        }
     }
 
-    private void LateUpdate()
-    {
-
-    }
-
-    private void Fire()
+    public void Fire(InputAction.CallbackContext ctx)
     {
         if (reloadCdTimer > 0) return;
 
@@ -55,12 +50,19 @@ public class GunGun : MonoBehaviour
 
         if (Physics.Raycast(cam.position, cam.forward, out hit, maxFireDistance, whatIsShootable))
         {
-            if (hit.collider.GetComponent<GettingShotManager>()) {
-                hit.collider.GetComponent<GettingShotManager>().BroadcastMessage("Hit");
+            var h = hit.collider.GetComponent<GettingShotManager>();
+            if (h)
+            {
+                h.BroadcastMessage("Hit");
             }
         }
-        Rigidbody b = Instantiate(bullet, new Vector3 (gunTip.position.x, gunTip.position.y, gunTip.position.z), new Quaternion (gun.rotation.x, gun.rotation.y+90, gun.rotation.z, gun.rotation.w));
-        b.AddForce(gun.transform.forward * 10000);
+        lr.enabled = true;
+        lr.SetPosition(0, gunTip.position);
+        lr.SetPosition(1, cam.position+cam.forward* maxFireDistance);
+        gun.GetComponent<AudioSource>().Play();
+
+
+
         reloadCdTimer = reloadCd;
 
         Debug.Log("fired");
