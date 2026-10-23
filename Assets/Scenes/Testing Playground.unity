@@ -415,6 +415,7 @@ MonoBehaviour:
   m_UnmodifiedMeshVersion: 5366
   m_Size: {x: -4.3779626, y: 0.74246764, z: 4.240548}
   m_LocalCenter: {x: 4.9094515, y: -0.6905832, z: 4.1002216}
+  m_PivotRatio: {x: 0, y: 0, z: 0}
   references:
     version: 2
     RefIds:
@@ -850,6 +851,7 @@ MonoBehaviour:
   m_UnmodifiedMeshVersion: 5366
   m_Size: {x: -4.3779626, y: 0.74246764, z: 4.240548}
   m_LocalCenter: {x: 4.9094515, y: -0.6905832, z: 4.1002216}
+  m_PivotRatio: {x: 0, y: 0, z: 0}
   references:
     version: 2
     RefIds:
@@ -1206,6 +1208,7 @@ MonoBehaviour:
   m_UnmodifiedMeshVersion: 6422
   m_Size: {x: -4.3779626, y: 15.912777, z: 4.240548}
   m_LocalCenter: {x: 4.9094524, y: -8.275738, z: 4.1002216}
+  m_PivotRatio: {x: 0, y: 0, z: 0}
   references:
     version: 2
     RefIds:
@@ -1884,6 +1887,7 @@ MonoBehaviour:
   m_UnmodifiedMeshVersion: 5366
   m_Size: {x: -4.3779626, y: 0.74246764, z: 4.240548}
   m_LocalCenter: {x: 4.9094515, y: -0.6905832, z: 4.1002216}
+  m_PivotRatio: {x: 0, y: 0, z: 0}
   references:
     version: 2
     RefIds:
@@ -2255,6 +2259,7 @@ MonoBehaviour:
   m_UnmodifiedMeshVersion: 4255
   m_Size: {x: -14.196865, y: 0.970268, z: 49.206665}
   m_LocalCenter: {x: 0, y: -0.57668304, z: -16.028425}
+  m_PivotRatio: {x: 0, y: 0, z: 0}
   references:
     version: 2
     RefIds:
@@ -2611,6 +2616,7 @@ MonoBehaviour:
   m_UnmodifiedMeshVersion: 6895
   m_Size: {x: -4.3779626, y: 15.912777, z: 61.04847}
   m_LocalCenter: {x: 4.9094524, y: -8.275738, z: 32.50418}
+  m_PivotRatio: {x: 0, y: 0, z: 0}
   references:
     version: 2
     RefIds:
@@ -3046,6 +3052,7 @@ MonoBehaviour:
   m_UnmodifiedMeshVersion: 6422
   m_Size: {x: -4.3779626, y: 15.912777, z: 4.240548}
   m_LocalCenter: {x: 4.9094524, y: -8.275738, z: 4.1002216}
+  m_PivotRatio: {x: 0, y: 0, z: 0}
   references:
     version: 2
     RefIds:
@@ -3387,6 +3394,7 @@ MonoBehaviour:
   m_UnmodifiedMeshVersion: 14268
   m_Size: {x: 300, y: -44.73102, z: 240.4}
   m_LocalCenter: {x: 0, y: 21.20884, z: 29.753885}
+  m_PivotRatio: {x: 0, y: 0, z: 0}
   references:
     version: 2
     RefIds:
@@ -3743,6 +3751,7 @@ MonoBehaviour:
   m_UnmodifiedMeshVersion: 9289
   m_Size: {x: -103.14336, y: 160.73769, z: -39.238068}
   m_LocalCenter: {x: -6.8851624, y: -50.140137, z: 1.7675323}
+  m_PivotRatio: {x: 0, y: 0, z: 0}
   references:
     version: 2
     RefIds:
@@ -28340,6 +28349,7 @@ MonoBehaviour:
   m_UnmodifiedMeshVersion: 11861
   m_Size: {x: -343.0333, y: -0.48591614, z: -343.90936}
   m_LocalCenter: {x: -16.686886, y: 0.21910095, z: 171.92554}
+  m_PivotRatio: {x: 0, y: 0, z: 0}
   references:
     version: 2
     RefIds:
@@ -28711,6 +28721,7 @@ MonoBehaviour:
   m_UnmodifiedMeshVersion: 6642
   m_Size: {x: -14.196865, y: 0.970268, z: 373.0609}
   m_LocalCenter: {x: 0, y: -0.5766983, z: -177.95555}
+  m_PivotRatio: {x: 0, y: 0, z: 0}
   references:
     version: 2
     RefIds:
@@ -29067,6 +29078,7 @@ MonoBehaviour:
   m_UnmodifiedMeshVersion: 6895
   m_Size: {x: -4.3779626, y: 15.912777, z: 61.04847}
   m_LocalCenter: {x: 4.9094524, y: -8.275738, z: 32.50418}
+  m_PivotRatio: {x: 0, y: 0, z: 0}
   references:
     version: 2
     RefIds:
@@ -29990,6 +30002,7 @@ MonoBehaviour:
   m_UnmodifiedMeshVersion: 6422
   m_Size: {x: -4.3779626, y: 15.912777, z: 4.240548}
   m_LocalCenter: {x: 4.9094524, y: -8.275738, z: 4.1002216}
+  m_PivotRatio: {x: 0, y: 0, z: 0}
   references:
     version: 2
     RefIds:
@@ -30395,6 +30408,7 @@ MonoBehaviour:
   m_UnmodifiedMeshVersion: 6422
   m_Size: {x: -4.3779626, y: 15.912777, z: 4.240548}
   m_LocalCenter: {x: 4.9094524, y: -8.275738, z: 4.1002216}
+  m_PivotRatio: {x: 0, y: 0, z: 0}
   references:
     version: 2
     RefIds:
@@ -31152,6 +31166,63 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
+--- !u!1001 &981102407
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2232407594162183646, guid: e36fe42c27d292e4680e3640cdf80295, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2232407594162183646, guid: e36fe42c27d292e4680e3640cdf80295, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2232407594162183646, guid: e36fe42c27d292e4680e3640cdf80295, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2232407594162183646, guid: e36fe42c27d292e4680e3640cdf80295, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2232407594162183646, guid: e36fe42c27d292e4680e3640cdf80295, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2232407594162183646, guid: e36fe42c27d292e4680e3640cdf80295, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2232407594162183646, guid: e36fe42c27d292e4680e3640cdf80295, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2232407594162183646, guid: e36fe42c27d292e4680e3640cdf80295, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2232407594162183646, guid: e36fe42c27d292e4680e3640cdf80295, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2232407594162183646, guid: e36fe42c27d292e4680e3640cdf80295, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5556555413319513679, guid: e36fe42c27d292e4680e3640cdf80295, type: 3}
+      propertyPath: m_Name
+      value: Cube (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e36fe42c27d292e4680e3640cdf80295, type: 3}
 --- !u!43 &1015135349
 Mesh:
   m_ObjectHideFlags: 0
@@ -31804,6 +31875,7 @@ MonoBehaviour:
   m_UnmodifiedMeshVersion: 9289
   m_Size: {x: -103.14336, y: 160.73769, z: -39.238068}
   m_LocalCenter: {x: -6.8851624, y: -50.140137, z: 1.7675323}
+  m_PivotRatio: {x: 0, y: 0, z: 0}
   references:
     version: 2
     RefIds:
@@ -56045,6 +56117,7 @@ MonoBehaviour:
   m_UnmodifiedMeshVersion: 980
   m_Size: {x: -32.42315, y: 0.6773271, z: -62.08213}
   m_LocalCenter: {x: 0, y: 0, z: 0}
+  m_PivotRatio: {x: 0, y: 0, z: 0}
   references:
     version: 2
     RefIds:
@@ -56416,6 +56489,7 @@ MonoBehaviour:
   m_UnmodifiedMeshVersion: 6422
   m_Size: {x: -4.3779626, y: 15.912777, z: 4.240548}
   m_LocalCenter: {x: 4.9094524, y: -8.275738, z: 4.1002216}
+  m_PivotRatio: {x: 0, y: 0, z: 0}
   references:
     version: 2
     RefIds:
@@ -56757,6 +56831,7 @@ MonoBehaviour:
   m_UnmodifiedMeshVersion: 4255
   m_Size: {x: -14.196865, y: 0.970268, z: 49.206665}
   m_LocalCenter: {x: 0, y: -0.57668304, z: -16.028425}
+  m_PivotRatio: {x: 0, y: 0, z: 0}
   references:
     version: 2
     RefIds:
@@ -57153,6 +57228,7 @@ MonoBehaviour:
   m_UnmodifiedMeshVersion: 14089
   m_Size: {x: -14.323385, y: 22.623957, z: -37.36093}
   m_LocalCenter: {x: -51.295147, y: -119.19699, z: -0.10194397}
+  m_PivotRatio: {x: 0, y: 0, z: 0}
   references:
     version: 2
     RefIds:
@@ -81587,6 +81663,7 @@ MonoBehaviour:
   m_UnmodifiedMeshVersion: 6422
   m_Size: {x: -4.3779626, y: 15.912777, z: 4.240548}
   m_LocalCenter: {x: 4.9094524, y: -8.275738, z: 4.1002216}
+  m_PivotRatio: {x: 0, y: 0, z: 0}
   references:
     version: 2
     RefIds:
@@ -81928,6 +82005,7 @@ MonoBehaviour:
   m_UnmodifiedMeshVersion: 9516
   m_Size: {x: 300, y: -2.313325, z: 300}
   m_LocalCenter: {x: 0, y: 0, z: 0}
+  m_PivotRatio: {x: 0, y: 0, z: 0}
   references:
     version: 2
     RefIds:
@@ -82367,6 +82445,7 @@ MonoBehaviour:
   m_UnmodifiedMeshVersion: 5366
   m_Size: {x: -4.3779626, y: 0.74246764, z: 4.240548}
   m_LocalCenter: {x: 4.9094515, y: -0.6905832, z: 4.1002216}
+  m_PivotRatio: {x: 0, y: 0, z: 0}
   references:
     version: 2
     RefIds:
@@ -82946,163 +83025,6 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
---- !u!1 &1419262964
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1419262965}
-  - component: {fileID: 1419262967}
-  - component: {fileID: 1419262966}
-  m_Layer: 5
-  m_Name: Text (TMP)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1419262965
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1419262964}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1597373650}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 111, y: 143}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -44089, y: -24066.5}
-  m_SizeDelta: {x: 89421.53, y: 48258}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1419262966
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1419262964}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: 'Controls:
-
-    WASD - Move
-
-    Shift - Run
-
-    Shift (Air) - Ground
-    Pound
-
-    Shift (Wallrunning) - Up
-
-    Control - Slide
-
-    Control (Wallrunning)
-    - Down
-
-    LMB - Swing
-
-    RMB - Grapple
-
-    Wallrunning - hold to the wall'
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 18
-  m_fontSizeBase: 18
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_characterHorizontalScale: 1
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_TextWrappingMode: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 0
-  m_ActiveFontFeatures: 6e72656b
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_EmojiFallbackSupport: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &1419262967
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1419262964}
-  m_CullTransparentMesh: 1
 --- !u!43 &1489763867
 Mesh:
   m_ObjectHideFlags: 0
@@ -83414,6 +83336,7 @@ MonoBehaviour:
   m_UnmodifiedMeshVersion: 4255
   m_Size: {x: -14.196865, y: 0.970268, z: 49.206665}
   m_LocalCenter: {x: 0, y: -0.57668304, z: -16.028425}
+  m_PivotRatio: {x: 0, y: 0, z: 0}
   references:
     version: 2
     RefIds:
@@ -84126,6 +84049,7 @@ MonoBehaviour:
   m_UnmodifiedMeshVersion: 6422
   m_Size: {x: -4.3779626, y: 15.912777, z: 4.240548}
   m_LocalCenter: {x: 4.9094524, y: -8.275738, z: 4.1002216}
+  m_PivotRatio: {x: 0, y: 0, z: 0}
   references:
     version: 2
     RefIds:
@@ -84444,7 +84368,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1419262965}
+  - {fileID: 1825492618}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -85104,6 +85028,7 @@ MonoBehaviour:
   m_UnmodifiedMeshVersion: 5366
   m_Size: {x: -4.3779626, y: 0.74246764, z: 4.240548}
   m_LocalCenter: {x: 4.9094515, y: -0.6905832, z: 4.1002216}
+  m_PivotRatio: {x: 0, y: 0, z: 0}
   references:
     version: 2
     RefIds:
@@ -85698,6 +85623,81 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
+--- !u!1 &1825492617
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1825492618}
+  - component: {fileID: 1825492620}
+  - component: {fileID: 1825492619}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1825492618
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1825492617}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1597373650}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -40.100006}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1825492619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1825492617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 6da46798b181b9e4e8ca02f8234e1427, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1825492620
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1825492617}
+  m_CullTransparentMesh: 1
 --- !u!1 &1839551463
 GameObject:
   m_ObjectHideFlags: 0
@@ -85925,6 +85925,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1905037565}
   - component: {fileID: 1905037564}
+  - component: {fileID: 1905037566}
   m_Layer: 0
   m_Name: Player Input Manager
   m_TagString: Untagged
@@ -85985,13 +85986,21 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1905037563}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 4.02995, y: 0, z: 1.70548}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!81 &1905037566
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1905037563}
+  m_Enabled: 1
 --- !u!43 &1911967711
 Mesh:
   m_ObjectHideFlags: 0
@@ -86659,6 +86668,7 @@ MonoBehaviour:
   m_UnmodifiedMeshVersion: 6466
   m_Size: {x: -19.734678, y: 0.74246764, z: 48.5091}
   m_LocalCenter: {x: -2.7689075, y: -0.6905823, z: 26.234497}
+  m_PivotRatio: {x: 0, y: 0, z: 0}
   references:
     version: 2
     RefIds:
@@ -87015,6 +87025,7 @@ MonoBehaviour:
   m_UnmodifiedMeshVersion: 5366
   m_Size: {x: -4.3779626, y: 0.74246764, z: 4.240548}
   m_LocalCenter: {x: 4.9094515, y: -0.6905832, z: 4.1002216}
+  m_PivotRatio: {x: 0, y: 0, z: 0}
   references:
     version: 2
     RefIds:
@@ -87371,6 +87382,7 @@ MonoBehaviour:
   m_UnmodifiedMeshVersion: 5366
   m_Size: {x: -4.3779626, y: 0.74246764, z: 4.240548}
   m_LocalCenter: {x: 4.9094515, y: -0.6905832, z: 4.1002216}
+  m_PivotRatio: {x: 0, y: 0, z: 0}
   references:
     version: 2
     RefIds:
@@ -87727,6 +87739,7 @@ MonoBehaviour:
   m_UnmodifiedMeshVersion: 6422
   m_Size: {x: -4.3779626, y: 15.912777, z: 4.240548}
   m_LocalCenter: {x: 4.9094524, y: -8.275738, z: 4.1002216}
+  m_PivotRatio: {x: 0, y: 0, z: 0}
   references:
     version: 2
     RefIds:
@@ -88068,6 +88081,7 @@ MonoBehaviour:
   m_UnmodifiedMeshVersion: 5366
   m_Size: {x: -4.3779626, y: 0.74246764, z: 4.240548}
   m_LocalCenter: {x: 4.9094515, y: -0.6905832, z: 4.1002216}
+  m_PivotRatio: {x: 0, y: 0, z: 0}
   references:
     version: 2
     RefIds:
@@ -88713,3 +88727,4 @@ SceneRoots:
   - {fileID: 1597373650}
   - {fileID: 516576788}
   - {fileID: 1905037565}
+  - {fileID: 981102407}
