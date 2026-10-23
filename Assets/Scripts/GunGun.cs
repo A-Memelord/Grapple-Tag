@@ -51,6 +51,7 @@ public class GunGun : MonoBehaviour
         if (Physics.Raycast(cam.position, cam.forward, out hit, maxFireDistance, whatIsShootable))
         {
             var h = hit.collider.GetComponent<GettingShotManager>();
+            Debug.Log(h);
             if (h)
             {
                 h.BroadcastMessage("Hit");
@@ -58,14 +59,17 @@ public class GunGun : MonoBehaviour
         }
         lr.enabled = true;
         lr.SetPosition(0, gunTip.position);
-        lr.SetPosition(1, cam.position+cam.forward* maxFireDistance);
+        
+        if (Physics.Raycast(cam.position, cam.forward, out hit, maxFireDistance))
+        {
+            lr.SetPosition(1, hit.point);
+        }
+        else { lr.SetPosition(1, cam.position + cam.forward * maxFireDistance); }
         gun.GetComponent<AudioSource>().Play();
 
 
 
         reloadCdTimer = reloadCd;
-
-        Debug.Log("fired");
     }
 }
     
