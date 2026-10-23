@@ -13,6 +13,7 @@ public class GettingShotManager : MonoBehaviour
     public Image bar;
     private void PlayerHit() 
     {
+        GetComponent<AudioSource>().Play();
         if (health != 0)
         { health -= 1; }
         if (health == 0)

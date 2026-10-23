@@ -46,6 +46,7 @@ public class GunGun : MonoBehaviour
     {
         if (reloadCdTimer > 0) return;
 
+        GetComponent<AudioSource>().Play();
         RaycastHit hit;
 
         if (Physics.Raycast(cam.position, cam.forward, out hit, maxFireDistance, whatIsShootable))

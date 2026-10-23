@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEditor.Build.Player;
 using UnityEngine;
 
@@ -8,19 +9,20 @@ public class ScoreManager : MonoBehaviour
     public float score3 = 0;
     public float score4 = 0;
     private float[] scores = {0,0,0,0 };
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private GameObject[] players;
+    public void AddPlayer(GameObject player) { players.Append(player); }
     public void IncreaseScore(int player)
     {
         scores[player] += 1;
         if (scores[player] >= 2) 
         {
             Win(player);
+            
         }
         
 
     }
 
-    // Update is called once per frame
     void Win(int player)
     {
         ;
