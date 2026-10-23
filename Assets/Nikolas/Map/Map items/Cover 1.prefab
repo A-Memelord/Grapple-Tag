@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2224757278888414393}
   - component: {fileID: 7476655062539752902}
   - component: {fileID: 8617422033166323681}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cover 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -490,17 +490,9 @@ MonoBehaviour:
   m_Mesh: {fileID: 0}
   m_VersionIndex: 2586
   m_IsSelectable: 1
-  m_SelectedFaces: 08000000
-  m_SelectedEdges:
-  - a: 32
-    b: 33
-  - a: 34
-    b: 32
-  - a: 33
-    b: 35
-  - a: 35
-    b: 34
-  m_SelectedVertices: 20000000210000002200000023000000
+  m_SelectedFaces: 
+  m_SelectedEdges: []
+  m_SelectedVertices: 
 --- !u!114 &8000611518818262618
 MonoBehaviour:
   m_ObjectHideFlags: 0

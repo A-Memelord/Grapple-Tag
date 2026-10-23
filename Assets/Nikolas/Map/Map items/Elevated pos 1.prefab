@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 918010718740579034}
   - component: {fileID: 7152731066648010490}
   - component: {fileID: 5098414851623874843}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Elevated pos 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
