@@ -840,12 +840,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   orientation: {fileID: 4037824116240937328}
-  playerCam: {fileID: 0}
+  playerCam: {fileID: 3823271851047735874}
   dashForce: 1200
   dashUpwardForce: 3
   maxDashYSpeed: 15
   dashDuration: 1
-  cam: {fileID: 0}
+  cam: {fileID: 5562752688326622155}
   dashFov: 0
   useCameraForward: 1
   allowAllDirections: 1
