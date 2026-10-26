@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 3014392092778724752}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -30.38, y: 37.5, z: 34.7}
+  m_LocalPosition: {x: -28.9, y: 37.31, z: 25.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -310,10 +310,6 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2453973305705614973, guid: 712c7b50307f10649906c80f3159a092, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2453973305705614973, guid: 712c7b50307f10649906c80f3159a092, type: 3}
       propertyPath: m_VersionIndex
       value: 5659
       objectReference: {fileID: 0}
@@ -370,10 +366,6 @@ PrefabInstance:
       value: Platform 2
       objectReference: {fileID: 0}
     - target: {fileID: 6483539314929650505, guid: 712c7b50307f10649906c80f3159a092, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7033815233454058245, guid: 712c7b50307f10649906c80f3159a092, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
