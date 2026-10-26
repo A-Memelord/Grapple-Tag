@@ -11,6 +11,7 @@ public class GettingShotManager : MonoBehaviour
     public int health = 3;
     public Sprite[] bars;
     public Image bar;
+    public ParticleSystem explode;
     private void PlayerHit() 
     {
         GetComponent<AudioSource>().Play();
@@ -20,6 +21,7 @@ public class GettingShotManager : MonoBehaviour
         {
             Color c = new Color(255, 0, 0, 175);
             gameObject.GetComponentInChildren<Image>().color = c;
+            explode.Play();
         }
         bar.sprite = bars[health];
     }
