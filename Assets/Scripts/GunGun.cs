@@ -1,4 +1,5 @@
 using Unity.Entities;
+using Unity.Transforms;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -48,16 +49,17 @@ public class GunGun : MonoBehaviour
 
         GetComponent<AudioSource>().Play();
         RaycastHit hit;
-
+        // check if the bullet hits something and if so run the hit funcction on it
         if (Physics.Raycast(cam.position, cam.forward, out hit, maxFireDistance, whatIsShootable))
         {
             var h = hit.collider.GetComponent<GettingShotManager>();
             Debug.Log(h);
-            if (h)
+            if (h && h != this.GetComponentInChildren<GettingShotManager>())
             {
                 h.BroadcastMessage("Hit");
             }
         }
+        // manages the bullet effect
         lr.enabled = true;
         lr.SetPosition(0, gunTip.position);
         
