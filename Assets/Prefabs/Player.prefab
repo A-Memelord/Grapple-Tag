@@ -6192,6 +6192,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98dd33ce521e7c84cb11b1869fdca5e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  num: 0
+  starts:
+  - {x: 0, y: 2, z: -60}
+  - {x: 0, y: 2, z: 60}
+  - {x: -30, y: 2, z: 0}
+  - {x: 30, y: 2, z: 0}
 --- !u!1001 &1536825123728483475
 PrefabInstance:
   m_ObjectHideFlags: 0
