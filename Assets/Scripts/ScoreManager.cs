@@ -3,6 +3,8 @@ using System.Linq;
 using Unity.VisualScripting;
 using UnityEditor.Build.Player;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -16,6 +18,7 @@ public class ScoreManager : MonoBehaviour
     private bool add;
     public Animator winner;
     public Animator starter;
+    public TextMeshProUGUI roundNum;
     public void AddPlayer() 
     {
         add = true;
@@ -44,6 +47,8 @@ public class ScoreManager : MonoBehaviour
         else {
             starter.SetTrigger("RoundStart");
             starter.SetInteger("Round", Round());
+            
+            roundNum.text = Round().ToString();
         }
     }
 
