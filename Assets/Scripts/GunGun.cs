@@ -53,7 +53,6 @@ public class GunGun : MonoBehaviour
         if (Physics.Raycast(cam.position, cam.forward, out hit, maxFireDistance, whatIsShootable))
         {
             var h = hit.collider.GetComponent<GettingShotManager>();
-            Debug.Log(h);
             if (h && h != this.GetComponentInChildren<GettingShotManager>())
             {
                 h.BroadcastMessage("Hit");
