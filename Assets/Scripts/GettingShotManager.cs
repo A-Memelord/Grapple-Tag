@@ -21,6 +21,7 @@ public class GettingShotManager : MonoBehaviour
         {
             Color c = new Color(255, 0, 0, 175);
             gameObject.GetComponentInChildren<Image>().color = c;
+            GameObject.Find("ScoreManagerObject").BroadcastMessage("Died", GetComponentInParent<PlayerInit>().num);
             explode.Play();
         }
         bar.sprite = bars[health];
@@ -28,7 +29,6 @@ public class GettingShotManager : MonoBehaviour
 
     void Hit()
     {
-        Debug.Log("hit");
         if (onShotBehavior == "destructable") { Destruct(); }
         if (onShotBehavior == "player") { PlayerHit(); }
     }
