@@ -48,6 +48,7 @@ public class Swinging : MonoBehaviour
         if (joint)
             return;
 
+        predictionPoint.gameObject.SetActive(true);
         RaycastHit sphereCastHit;
         Physics.SphereCast(cam.position, predictionSphereCastRadius, cam.forward,
             out sphereCastHit, maxSwingDistance, whatIsGrappleable);
