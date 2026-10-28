@@ -88560,6 +88560,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4998504588818834371, guid: 6c057f156f35caf4fb366c0a53ba24a6, type: 3}
+      propertyPath: winner
+      value: 
+      objectReference: {fileID: 760214125}
+    - target: {fileID: 4998504588818834371, guid: 6c057f156f35caf4fb366c0a53ba24a6, type: 3}
+      propertyPath: starter
+      value: 
+      objectReference: {fileID: 918556134}
     - target: {fileID: 5071519757912409397, guid: 6c057f156f35caf4fb366c0a53ba24a6, type: 3}
       propertyPath: m_Name
       value: ScoreManagerObject
