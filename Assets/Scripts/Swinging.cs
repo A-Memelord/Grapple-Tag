@@ -90,7 +90,6 @@ public class Swinging : MonoBehaviour
 
     public void Swing(InputAction.CallbackContext ctx)
     {
-        Debug.Log(ctx.phase);
 
         if (ctx.started)
             StartSwing();

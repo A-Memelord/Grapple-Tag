@@ -5,6 +5,9 @@ using UnityEditor.Build.Player;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.InputSystem;
+using System.Collections.Generic;
+using System.Collections;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -19,8 +22,13 @@ public class ScoreManager : MonoBehaviour
     public Animator winner;
     public Animator starter;
     public TextMeshProUGUI roundNum;
-    public void AddPlayer() 
+    private GameObject newPlayer;
+
+    
+
+    public void AddPlayer(PlayerInput playerInput) 
     {
+        newPlayer = playerInput.gameObject;
         add = true;
     }
     private void LateUpdate()
@@ -30,7 +38,7 @@ public class ScoreManager : MonoBehaviour
             // add the newest player to the player list
             int p = players.Length + 1;
             Array.Resize(ref players, players.Length +1);
-            players[players.Length-1]=GameObject.Find("Player" + p.ToString());
+            players[players.Length-1]=newPlayer;
             add = false;
             //rezise the dead player array to the length of the current players
             Array.Resize(ref deadPlayers, players.Length);
@@ -94,5 +102,18 @@ public class ScoreManager : MonoBehaviour
         scores[1] = score2;
         scores[2] = score3;
         scores[3] = score4;
+        StartCoroutine(Timer());
+    }
+    IEnumerator Timer() 
+    {
+        for (int i = 0; i < 30; i++)
+        {
+            yield return new WaitForSeconds(0.5f);
+            roundNum.text = (30 - i).ToString();
+            foreach (GameObject p in players) { p.GetComponentInChildren<GettingShotManager>().health = 3; }
+        }
+        starter.SetTrigger("RoundStart");
+        foreach (GameObject p in players) { p.GetComponentInChildren<GettingShotManager>().health = 3; }
+
     }
 }

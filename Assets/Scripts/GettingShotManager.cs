@@ -7,7 +7,7 @@ public class GettingShotManager : MonoBehaviour
     [Header("Possible behaviors: destructable, player")]
     public string onShotBehavior;
     
-    private void Destruct() { Destroy(this.gameObject); }
+    public void Destruct() { Destroy(this.gameObject); }
     public int health = 3;
     public Sprite[] bars;
     public Image bar;
@@ -25,6 +25,10 @@ public class GettingShotManager : MonoBehaviour
             explode.Play();
         }
         bar.sprite = bars[health];
+    }
+    private void Update()
+    {
+        if (onShotBehavior == "player") { bar.sprite = bars[health]; }
     }
 
     void Hit()
