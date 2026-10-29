@@ -1415,8 +1415,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Start
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: deaf2b77d258c444cadece0838705dcb, type: 2}
-  m_sharedMaterial: {fileID: 7976917279329247633, guid: deaf2b77d258c444cadece0838705dcb, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7bb272d2ca956684e8dd4cc7936be15b, type: 2}
+  m_sharedMaterial: {fileID: 9095375162318490627, guid: 7bb272d2ca956684e8dd4cc7936be15b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1440,8 +1440,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 100
-  m_fontSizeBase: 100
+  m_fontSize: 125
+  m_fontSizeBase: 125
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -11023,7 +11023,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5ae74cdbaf38314d87c30fa933ce78f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StartMenuMethods
-  SceneName: Testing Playground
+  SceneName: Arena
   fadeImage: {fileID: 474819571}
   anim: {fileID: 474819568}
 --- !u!1 &922913768
@@ -18677,6 +18677,7 @@ GameObject:
   - component: {fileID: 1330152837}
   - component: {fileID: 1330152839}
   - component: {fileID: 1330152838}
+  - component: {fileID: 1330152840}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -18741,6 +18742,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1330152836}
   m_CullTransparentMesh: 1
+--- !u!114 &1330152840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1330152836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Shadow
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: -8.1, y: -16.9}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1530988887
 GameObject:
   m_ObjectHideFlags: 0
@@ -19253,7 +19269,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 2}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1808857094
@@ -19278,8 +19294,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Quit
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: deaf2b77d258c444cadece0838705dcb, type: 2}
-  m_sharedMaterial: {fileID: 7976917279329247633, guid: deaf2b77d258c444cadece0838705dcb, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7bb272d2ca956684e8dd4cc7936be15b, type: 2}
+  m_sharedMaterial: {fileID: 9095375162318490627, guid: 7bb272d2ca956684e8dd4cc7936be15b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -19303,8 +19319,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 100
-  m_fontSizeBase: 100
+  m_fontSize: 125
+  m_fontSizeBase: 125
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -19313,7 +19329,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: -3.53
   m_characterHorizontalScale: 1.2
   m_wordSpacing: 0
   m_lineSpacing: 0
