@@ -3,6 +3,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.InputSystem;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -59,7 +60,7 @@ public class ScoreManager : MonoBehaviour
     {
         winner.SetInteger("player", player+1);
         winner.SetTrigger("won");
-
+        SceneManager.LoadScene("Title");
         Debug.Log("won");
     }
     void Died(int player) 
