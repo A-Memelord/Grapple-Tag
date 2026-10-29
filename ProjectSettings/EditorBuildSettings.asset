@@ -9,7 +9,10 @@ EditorBuildSettings:
     path: Assets/Scenes/Title.unity
     guid: 310b21fefebb888469bfba9ccb7de11c
   - enabled: 1
-    path: Assets/Scenes/Testing Playground.unity
+    path: Assets/Scenes/Arena.unity
+    guid: 87675012f9131d8429a020a178001a2c
+  - enabled: 0
+    path: Assets/Scenes/Test Levels/Testing Playground.unity
     guid: 99c9720ab356a0642a771bea13969a05
   m_configObjects:
     com.unity.dt.app-ui: {fileID: 11400000, guid: 1b1c20d82303e4b5781c3ef50ac1449f, type: 2}
