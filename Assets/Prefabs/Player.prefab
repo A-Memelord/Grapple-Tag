@@ -5586,7 +5586,6 @@ GameObject:
   - component: {fileID: 8044631885480926873}
   - component: {fileID: 1609453721142989353}
   - component: {fileID: 3696302909490401429}
-  - component: {fileID: 1439060564848648536}
   - component: {fileID: 6306667579109501500}
   - component: {fileID: 3994696085559762223}
   m_Layer: 9
@@ -6084,14 +6083,6 @@ MonoBehaviour:
   reloadCd: 0.5
   lr: {fileID: 2661130781531400406}
   shootKey: 324
---- !u!81 &1439060564848648536
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8197803233955085293}
-  m_Enabled: 1
 --- !u!82 &6306667579109501500
 AudioSource:
   m_ObjectHideFlags: 0
@@ -6149,7 +6140,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -6201,6 +6192,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98dd33ce521e7c84cb11b1869fdca5e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  num: 0
+  starts:
+  - {x: 0, y: 2, z: -60}
+  - {x: 0, y: 2, z: 60}
+  - {x: -30, y: 2, z: 0}
+  - {x: 30, y: 2, z: 0}
 --- !u!1001 &1536825123728483475
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6353,10 +6350,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3260042663068424744}
     m_Modifications:
-    - target: {fileID: 1786113591310802198, guid: 16b96b3b03eaef04ab9ef5747df676fc, type: 3}
-      propertyPath: m_ScaleFactor
-      value: 1.71
-      objectReference: {fileID: 0}
     - target: {fileID: 1786113591310802198, guid: 16b96b3b03eaef04ab9ef5747df676fc, type: 3}
       propertyPath: m_UiScaleMode
       value: 0
