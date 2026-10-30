@@ -24,6 +24,7 @@ public class ScoreManager : MonoBehaviour
     public Animator starter;
     public TextMeshProUGUI roundNum;
     private GameObject newPlayer;
+    public GameObject[] scoreDisps;
 
     
 
@@ -51,9 +52,11 @@ public class ScoreManager : MonoBehaviour
         scores[player] += 1;
         if (scores[player] >= 2) 
         {
+            scoreDisps[player+4].GetComponent<Image>().color = new Color(255, 255, 255, 255);
             Win(player);
         }
         else {
+            scoreDisps[player].GetComponent<Image>().color = new Color(255, 255, 255, 255);
             starter.SetTrigger("RoundStart");
             starter.SetInteger("Round", Round());
             
