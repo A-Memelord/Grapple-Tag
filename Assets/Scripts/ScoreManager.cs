@@ -65,8 +65,12 @@ public class ScoreManager : MonoBehaviour
     {
         winner.SetInteger("player", player+1);
         winner.SetTrigger("won");
+        WaitWin();
         SceneManager.LoadScene("Title");
-        Debug.Log("won");
+    }
+    IEnumerator WaitWin() 
+    {
+        yield return new WaitForSeconds(2);
     }
     void Died(int player) 
     {
