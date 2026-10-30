@@ -84,6 +84,10 @@ public class ScoreManager : MonoBehaviour
     }
     private void Reset()
     {
+        for (int i = 0; i < deadPlayers.Length; i++)
+        {
+            deadPlayers[i] = true;
+        }
         foreach(GameObject p in players) 
         {
             p.BroadcastMessage("Reset");
@@ -110,7 +114,7 @@ public class ScoreManager : MonoBehaviour
         for (int i = 0; i < 30; i++)
         {
             yield return new WaitForSeconds(0.5f);
-            roundNum.text = (30 - i).ToString();
+            roundNum.text = (15 - i/2).ToString();
             foreach (GameObject p in players) { p.GetComponentInChildren<GettingShotManager>().health = 3; }
         }
         starter.SetTrigger("RoundStart");
