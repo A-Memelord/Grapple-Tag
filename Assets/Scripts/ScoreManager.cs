@@ -69,7 +69,7 @@ public class ScoreManager : MonoBehaviour
     }
     void Died(int player) 
     {
-        deadPlayers[player - 1] = false;
+        deadPlayers[player - 1] = true;
         int a=0;
         foreach (bool p in deadPlayers) 
         { 
