@@ -84,6 +84,10 @@ public class ScoreManager : MonoBehaviour
     }
     private void Reset()
     {
+        for (int i = 0; i < deadPlayers.Length; i++)
+        {
+            deadPlayers[i] = true;
+        }
         foreach(GameObject p in players) 
         {
             p.BroadcastMessage("Reset");
