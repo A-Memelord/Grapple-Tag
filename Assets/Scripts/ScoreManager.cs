@@ -1,12 +1,7 @@
 using System;
-using System.Linq;
-using Unity.VisualScripting;
-using UnityEditor.Build.Player;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 using UnityEngine.InputSystem;
-using System.Collections.Generic;
 using System.Collections;
 using UnityEngine.SceneManagement;
 
