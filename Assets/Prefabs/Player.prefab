@@ -5190,7 +5190,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3823271851047735874}
   - component: {fileID: 8842017300578412349}
-  - component: {fileID: 644681119001275409}
   - component: {fileID: 3468129753748922580}
   - component: {fileID: 5562752688326622155}
   m_Layer: 0
@@ -5268,14 +5267,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &644681119001275409
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5204031043223054167}
-  m_Enabled: 0
 --- !u!114 &3468129753748922580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6258,6 +6249,18 @@ PrefabInstance:
     - target: {fileID: 2524556375237583586, guid: 5f0c991d4d8ce9e479393dd36016c2c7, type: 3}
       propertyPath: m_Name
       value: Gun (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4729647927779950668, guid: 5f0c991d4d8ce9e479393dd36016c2c7, type: 3}
+      propertyPath: MaxDistance
+      value: 10026
+      objectReference: {fileID: 0}
+    - target: {fileID: 4729647927779950668, guid: 5f0c991d4d8ce9e479393dd36016c2c7, type: 3}
+      propertyPath: rolloffMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4729647927779950668, guid: 5f0c991d4d8ce9e479393dd36016c2c7, type: 3}
+      propertyPath: BypassEffects
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4838954407600979217, guid: 5f0c991d4d8ce9e479393dd36016c2c7, type: 3}
       propertyPath: m_Mesh
