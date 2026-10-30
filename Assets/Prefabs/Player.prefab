@@ -5332,8 +5332,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e2b01f7ba9e6504aa97242e9daee0eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensX: 200
-  sensY: 200
+  sensX: 100
+  sensY: 100
   orientation: {fileID: 4037824116240937328}
 --- !u!1 &5996823405265193454
 GameObject:
@@ -6781,7 +6781,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6141811784687544116, guid: 16b96b3b03eaef04ab9ef5747df676fc, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 97.997986
+      value: 97.99805
       objectReference: {fileID: 0}
     - target: {fileID: 6141811784687544116, guid: 16b96b3b03eaef04ab9ef5747df676fc, type: 3}
       propertyPath: m_AnchoredPosition.y
