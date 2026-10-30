@@ -5876,16 +5876,8 @@ MonoBehaviour:
     m_ActionName: 'Player/Look[/Mouse/delta,/Pen/delta]'
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 6c2ab1b8-8984-453a-af3d-a3c78ae1679a
-    m_ActionName: 'Player/Attack[/Mouse/leftButton,/Keyboard/enter]'
-  - m_PersistentCalls:
-      m_Calls: []
     m_ActionId: 852140f2-7766-474d-8707-702459ba45f3
     m_ActionName: 'Player/Interact[/Keyboard/e]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 27c5f898-bc57-4ee1-8800-db469aca5fe3
-    m_ActionName: 'Player/Crouch[/Keyboard/c]'
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 136242733861870725}
@@ -6212,7 +6204,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1401907502533082336, guid: 5f0c991d4d8ce9e479393dd36016c2c7, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.35
+      value: 0.440615
       objectReference: {fileID: 0}
     - target: {fileID: 1401907502533082336, guid: 5f0c991d4d8ce9e479393dd36016c2c7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6220,7 +6212,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1401907502533082336, guid: 5f0c991d4d8ce9e479393dd36016c2c7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.361
+      value: -0.34019
       objectReference: {fileID: 0}
     - target: {fileID: 1401907502533082336, guid: 5f0c991d4d8ce9e479393dd36016c2c7, type: 3}
       propertyPath: m_LocalPosition.z
