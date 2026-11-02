@@ -13,7 +13,7 @@ public class ScoreManager : MonoBehaviour
     public int score4 = 0;
     private float[] scores = {0,0,0,0 };
     public GameObject[] players = { };
-    bool[] deadPlayers;
+    public bool[] deadPlayers;
     private bool add;
     public Animator winner;
     public Animator starter;
@@ -24,6 +24,7 @@ public class ScoreManager : MonoBehaviour
 
     public void AddPlayer(PlayerInput playerInput) 
     {
+
         newPlayer = playerInput.gameObject;
         add = true;
     }
@@ -38,7 +39,7 @@ public class ScoreManager : MonoBehaviour
             add = false;
             //rezise the dead player array to the length of the current players
             Array.Resize(ref deadPlayers, players.Length);
-            deadPlayers[deadPlayers.Length - 1] = true;
+            deadPlayers[deadPlayers.Length - 1] = false;
         }
     }
     public void IncreaseScore(int player)
@@ -60,12 +61,18 @@ public class ScoreManager : MonoBehaviour
     {
         winner.SetInteger("player", player+1);
         winner.SetTrigger("won");
+        StartCoroutine(WaitWin());
+    }
+    IEnumerator WaitWin() 
+    {
+        Debug.Log("winin");
+        yield return new WaitForSeconds(2);
         SceneManager.LoadScene("Title");
-        Debug.Log("won");
     }
     void Died(int player) 
     {
-        deadPlayers[player - 1] = false;
+        Debug.Log(player);
+        deadPlayers[player -1] = true;
         int a=0;
         foreach (bool p in deadPlayers) 
         { 
@@ -79,6 +86,10 @@ public class ScoreManager : MonoBehaviour
     }
     private void Reset()
     {
+        for (int i = 0; i < deadPlayers.Length; i++)
+        {
+            deadPlayers[i] = false;
+        }
         foreach(GameObject p in players) 
         {
             p.BroadcastMessage("Reset");
@@ -105,7 +116,7 @@ public class ScoreManager : MonoBehaviour
         for (int i = 0; i < 30; i++)
         {
             yield return new WaitForSeconds(0.5f);
-            roundNum.text = (30 - i).ToString();
+            roundNum.text = (15 - i/2).ToString();
             foreach (GameObject p in players) { p.GetComponentInChildren<GettingShotManager>().health = 3; }
         }
         starter.SetTrigger("RoundStart");
