@@ -1,12 +1,7 @@
 using System;
-using System.Linq;
-using Unity.VisualScripting;
-using UnityEditor.Build.Player;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 using UnityEngine.InputSystem;
-using System.Collections.Generic;
 using System.Collections;
 using UnityEngine.SceneManagement;
 
@@ -18,7 +13,7 @@ public class ScoreManager : MonoBehaviour
     public int score4 = 0;
     private float[] scores = {0,0,0,0 };
     public GameObject[] players = { };
-    bool[] deadPlayers;
+    public bool[] deadPlayers;
     private bool add;
     public Animator winner;
     public Animator starter;
@@ -29,6 +24,7 @@ public class ScoreManager : MonoBehaviour
 
     public void AddPlayer(PlayerInput playerInput) 
     {
+
         newPlayer = playerInput.gameObject;
         add = true;
     }
@@ -43,7 +39,7 @@ public class ScoreManager : MonoBehaviour
             add = false;
             //rezise the dead player array to the length of the current players
             Array.Resize(ref deadPlayers, players.Length);
-            deadPlayers[deadPlayers.Length - 1] = true;
+            deadPlayers[deadPlayers.Length - 1] = false;
         }
     }
     public void IncreaseScore(int player)
@@ -65,16 +61,18 @@ public class ScoreManager : MonoBehaviour
     {
         winner.SetInteger("player", player+1);
         winner.SetTrigger("won");
-        WaitWin();
-        SceneManager.LoadScene("Title");
+        StartCoroutine(WaitWin());
     }
     IEnumerator WaitWin() 
     {
+        Debug.Log("winin");
         yield return new WaitForSeconds(2);
+        SceneManager.LoadScene("Title");
     }
     void Died(int player) 
     {
-        deadPlayers[player - 1] = false;
+        Debug.Log(player);
+        deadPlayers[player -1] = true;
         int a=0;
         foreach (bool p in deadPlayers) 
         { 
@@ -90,7 +88,7 @@ public class ScoreManager : MonoBehaviour
     {
         for (int i = 0; i < deadPlayers.Length; i++)
         {
-            deadPlayers[i] = true;
+            deadPlayers[i] = false;
         }
         foreach(GameObject p in players) 
         {
