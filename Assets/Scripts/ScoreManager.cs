@@ -51,21 +51,20 @@ public class ScoreManager : MonoBehaviour
         }
         else {
             starter.SetTrigger("RoundStart");
-            starter.SetInteger("Round", Round());
-            
+            starter.GetComponentInChildren<TextMeshProUGUI>().text = Round().ToString();
+
             roundNum.text = Round().ToString();
         }
     }
 
     void Win(int player)
     {
-        winner.SetInteger("player", player+1);
+        winner.GetComponentInChildren<TextMeshProUGUI>().text = player.ToString();
         winner.SetTrigger("won");
         StartCoroutine(WaitWin());
     }
     IEnumerator WaitWin() 
     {
-        Debug.Log("winin");
         yield return new WaitForSeconds(2);
         SceneManager.LoadScene("Title");
     }

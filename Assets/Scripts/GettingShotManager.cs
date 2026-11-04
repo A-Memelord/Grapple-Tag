@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,15 +17,26 @@ public class GettingShotManager : MonoBehaviour
     {
         GetComponent<AudioSource>().Play();
         if (health != 0)
-        { health -= 1; }
+        {
+            health -= 1;
+        }
         if (health == 0)
         {
-            Color c = new Color(255, 0, 0, 175);
+            Color c = new Color(255, 0, 0, 255);
             gameObject.GetComponentInChildren<Image>().color = c;
             GameObject.Find("ScoreManagerObject").BroadcastMessage("Died", GetComponentInParent<PlayerInit>().num);
             explode.Play();
         }
+        else {StartCoroutine(HitFlash());}
         bar.sprite = bars[health];
+    }
+    IEnumerator HitFlash() 
+    {
+        Color c = new Color(255, 0, 0, 25);
+        gameObject.GetComponentInChildren<Image>().color = c;
+        yield return new WaitForSeconds(0.1f);
+        c = new Color(0, 0, 0, 0);
+        gameObject.GetComponentInChildren<Image>().color = c;
     }
     private void Update()
     {
