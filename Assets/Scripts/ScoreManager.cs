@@ -78,7 +78,7 @@ public class ScoreManager : MonoBehaviour
         { 
             if (p) { a += 1; }
         }
-        if (a == 1 && deadPlayers.Length >1)
+        if (a == deadPlayers.Length-1 && deadPlayers.Length >1)
         {
             IncreaseScore(Array.IndexOf(deadPlayers,true));
             Reset();
