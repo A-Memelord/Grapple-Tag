@@ -7,10 +7,9 @@ using UnityEngine.UI;
 public class StartMenuMethods : MonoBehaviour
 {
 
-    [Header("Scene To switch within")]
+    
     [SerializeField] public string SceneName;
 
-    [Header("Fade in and out Objects")]
     public Image fadeImage;
     public Animator anim;
 
