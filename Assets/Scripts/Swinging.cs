@@ -8,6 +8,9 @@ public class Swinging : MonoBehaviour
     public Transform gunTip, cam, player;
     public LayerMask whatIsGrappleable;
     public PlayerMovement pm;
+    public GameObject gunBack;
+    private Quaternion gunBackDefault;
+
 
     [Header("Swinging")]
     private float maxSwingDistance = 25f;
@@ -27,7 +30,7 @@ public class Swinging : MonoBehaviour
 
     void Start()
     {
-        
+        gunBackDefault = gunBack.transform.localRotation;
     }
 
     void Update()
@@ -40,6 +43,7 @@ public class Swinging : MonoBehaviour
         if(pm.swinging)
         {
             lr.SetPosition(0, gunTip.position);
+            gunBack.transform.forward = gunBack.transform.position - swingPoint;
         }
     }
 
@@ -150,6 +154,9 @@ public class Swinging : MonoBehaviour
         Destroy(joint);
         joint = null;
         lr.positionCount = 0;
+
+        //Stop the grapple gun swiveling
+        gunBack.transform.localRotation = gunBackDefault;
 
         lr.enabled = false;
     }

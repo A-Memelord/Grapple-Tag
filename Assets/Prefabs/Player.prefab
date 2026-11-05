@@ -5104,7 +5104,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 107
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 0.44353867
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -5213,7 +5213,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 580225044517580211}
+  - {fileID: 7527559631278538174}
   - {fileID: 443451991390886003}
   m_Father: {fileID: 3985123860595177856}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5362,13 +5362,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5996823405265193454}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.339, y: -0.215, z: 0.625}
-  m_LocalScale: {x: 0.1108387, y: 0.17254303, z: 0.38828376}
+  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.49}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4376541516372087658}
-  m_Father: {fileID: 3823271851047735874}
+  m_Father: {fileID: 7527559631278538174}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &42124701945403956
 MeshFilter:
@@ -5561,13 +5561,45 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6813303636590736882}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.496}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.49600017}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 580225044517580211}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7934885074401063313
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7527559631278538174}
+  m_Layer: 0
+  m_Name: EvilGunTip
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7527559631278538174
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7934885074401063313}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: -0.339, y: -0.21500015, z: 0.43474096}
+  m_LocalScale: {x: 0.1108387, y: 0.17254303, z: 0.38828376}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 580225044517580211}
+  m_Father: {fileID: 3823271851047735874}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &8197803233955085293
 GameObject:
   m_ObjectHideFlags: 0
@@ -5756,6 +5788,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 448
   pm: {fileID: 136242733861870725}
+  gunBack: {fileID: 7934885074401063313}
   orientation: {fileID: 4037824116240937328}
   rb: {fileID: 5101789481496155687}
   horizontalThrustForce: 2000
