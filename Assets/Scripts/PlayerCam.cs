@@ -36,7 +36,6 @@ public class PlayerCam : MonoBehaviour
 
     public void Turn(InputAction.CallbackContext ctx)
     {
-        Debug.Log(ctx.control);
         if (ctx.control != InputSystem.FindControl("<Gamepad>/rightStick"))
         {
             xTurn = ctx.ReadValue<Vector2>().x * Time.deltaTime * sensX;

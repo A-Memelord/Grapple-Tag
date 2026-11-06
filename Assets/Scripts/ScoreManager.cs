@@ -7,11 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class ScoreManager : MonoBehaviour
 {
-    public int score1 = 0;
-    public int score2 = 0;
-    public int score3 = 0;
-    public int score4 = 0;
-    private float[] scores = {0,0,0,0 };
+    private float[] scores = {};
     public GameObject[] players = { };
     public bool[] deadPlayers;
     private bool add;
@@ -40,6 +36,9 @@ public class ScoreManager : MonoBehaviour
             //rezise the dead player array to the length of the current players
             Array.Resize(ref deadPlayers, players.Length);
             deadPlayers[deadPlayers.Length - 1] = false;
+            // resize the scores array
+            Array.Resize(ref scores, players.Length);
+            scores[scores.Length - 1] = 0;
         }
     }
     public void IncreaseScore(int player)
@@ -47,7 +46,7 @@ public class ScoreManager : MonoBehaviour
         scores[player] += 1;
         if (scores[player] >= 2) 
         {
-            Win(player);
+            Win(player+1);
         }
         else {
             starter.SetTrigger("RoundStart");
@@ -79,7 +78,7 @@ public class ScoreManager : MonoBehaviour
         }
         if (a == deadPlayers.Length-1 && deadPlayers.Length >1)
         {
-            IncreaseScore(Array.IndexOf(deadPlayers,true));
+            IncreaseScore(Array.IndexOf(deadPlayers,false));
             Reset();
         }
     }
@@ -104,10 +103,6 @@ public class ScoreManager : MonoBehaviour
     }
     void Start()
     {
-        scores[0] = score1;
-        scores[1] = score2;
-        scores[2] = score3;
-        scores[3] = score4;
         StartCoroutine(Timer());
     }
     IEnumerator Timer() 
