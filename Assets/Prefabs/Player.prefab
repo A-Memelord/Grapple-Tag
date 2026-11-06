@@ -5332,6 +5332,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e2b01f7ba9e6504aa97242e9daee0eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tiltSmoothness: 8
+  tiltAngle: 3
   sensX: 100
   sensY: 100
   orientation: {fileID: 4037824116240937328}
@@ -5879,6 +5881,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 136242733861870725}
         m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: Move
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5562752688326622155}
+        m_TargetAssemblyTypeName: PlayerCam, Assembly-CSharp
         m_MethodName: Move
         m_Mode: 0
         m_Arguments:
