@@ -5334,6 +5334,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sensX: 100
   sensY: 100
+  sensXCon: 75
+  sensYCon: 75
   orientation: {fileID: 4037824116240937328}
 --- !u!1 &5996823405265193454
 GameObject:

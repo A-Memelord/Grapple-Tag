@@ -1,10 +1,13 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.ProBuilder.MeshOperations;
 
 public class PlayerCam : MonoBehaviour
 {
     public float sensX;
     public float sensY;
+    public float sensXCon;
+    public float sensYCon;
 
     public Transform orientation;
 
@@ -33,8 +36,18 @@ public class PlayerCam : MonoBehaviour
 
     public void Turn(InputAction.CallbackContext ctx)
     {
-        xTurn = ctx.ReadValue<Vector2>().x * Time.deltaTime * sensX;
-        yTurn = ctx.ReadValue<Vector2>().y * Time.deltaTime * sensY;
+        Debug.Log(ctx.control);
+        if (ctx.control != InputSystem.FindControl("<Gamepad>/rightStick"))
+        {
+            xTurn = ctx.ReadValue<Vector2>().x * Time.deltaTime * sensX;
+            yTurn = ctx.ReadValue<Vector2>().y * Time.deltaTime * sensY;
+        }
+        else 
+        {
+            xTurn = ctx.ReadValue<Vector2>().x * Time.deltaTime * sensXCon;
+            yTurn = ctx.ReadValue<Vector2>().y * Time.deltaTime * sensYCon;
+        }
+    
     }
 
     public void DoFov(float endValue)
